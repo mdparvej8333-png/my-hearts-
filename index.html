@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A little romantic surprise made with love." />
+  <title>My Heart Has Something to Say 💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .24), transparent 28%),
+        radial-gradient(circle at 88% 82%, rgba(255, 139, 183, .28), transparent 30%),
+        linear-gradient(135deg, #3a071b 0%, #8f123f 45%, #ef476f 100%);
+    }
+    .glass {
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .24);
+      box-shadow: 0 24px 80px rgba(42, 0, 22, .32), inset 0 1px 0 rgba(255, 255, 255, .18);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+    .floating-heart { animation: float 5s ease-in-out infinite; }
+    .floating-heart:nth-child(2) { animation-delay: -1.8s; }
+    .floating-heart:nth-child(3) { animation-delay: -3.2s; }
+    @keyframes float { 0%, 100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-18px) rotate(8deg); } }
+    .section-enter { animation: sectionEnter .55s ease both; }
+    @keyframes sectionEnter { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .heartbeat { animation: heartbeat 1.65s ease-in-out infinite; }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.08); } 28% { transform: scale(1); } 42% { transform: scale(1.08); } 70% { transform: scale(1); } }
+    .btn-glow { box-shadow: 0 8px 28px rgba(255, 80, 132, .3); }
+    .btn-glow:hover { box-shadow: 0 12px 38px rgba(255, 80, 132, .52); }
+    #thinkButton { transition: left .22s ease, top .22s ease, transform .22s ease; }
+  </style>
+</head>
+<body class="relative flex min-h-screen items-center justify-center px-4 py-10 text-white sm:px-6">
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden">
+    <span class="floating-heart absolute left-[8%] top-[14%] text-4xl opacity-30">♡</span>
+    <span class="floating-heart absolute right-[10%] top-[24%] text-5xl opacity-25">♥</span>
+    <span class="floating-heart absolute bottom-[12%] left-[16%] text-3xl opacity-25">♡</span>
+  </div>
+
+  <main class="relative z-10 w-full max-w-2xl">
+    <div class="mb-5 flex items-center justify-center gap-2 text-sm font-medium tracking-[.28em] text-pink-100/75 uppercase">
+      <span class="h-px w-8 bg-pink-200/40"></span><span>A little message from my heart</span><span class="h-px w-8 bg-pink-200/40"></span>
+    </div>
+
+    <div class="glass rounded-[2rem] p-6 sm:p-10">
+      <section id="introSection" class="section-enter text-center">
+        <div class="heartbeat mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white/15 text-5xl shadow-xl ring-1 ring-white/20">💖</div>
+        <p class="mb-3 text-sm font-semibold tracking-[.2em] text-pink-100 uppercase">For someone truly special</p>
+        <h1 class="text-4xl font-black tracking-tight sm:text-6xl">Hey Special One<span class="text-pink-200">...</span></h1>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-pink-50/90">There is something I have been carrying in my heart for a while. So, take a tiny moment, smile, and let me tell you what you mean to me.</p>
+        <button data-next="reasonsSection" class="btn-glow mt-8 rounded-full bg-white px-7 py-3.5 font-bold text-rose-700 transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/40">Read My Heart ✨</button>
+      </section>
+
+      <section id="reasonsSection" class="hidden text-center">
+        <p class="mb-3 text-5xl">🌷</p>
+        <h2 class="text-3xl font-extrabold sm:text-4xl">Three little reasons...</h2>
+        <p class="mt-3 text-pink-100/75">Though honestly, I could list a thousand.</p>
+        <div class="mt-7 space-y-4 text-left">
+          <article class="rounded-2xl border border-white/15 bg-black/10 p-5 transition hover:bg-white/10"><div class="flex gap-4"><span class="text-2xl">✨</span><p class="leading-7 text-pink-50/95">You give me a vibe unlike anything I have ever felt in my entire life.</p></div></article>
+          <article class="rounded-2xl border border-white/15 bg-black/10 p-5 transition hover:bg-white/10"><div class="flex gap-4"><span class="text-2xl">🌎</span><p class="leading-7 text-pink-50/95">You are the first girl who completely changed my world and perspective, and you always make me feel so special.</p></div></article>
+          <article class="rounded-2xl border border-white/15 bg-black/10 p-5 transition hover:bg-white/10"><div class="flex gap-4"><span class="text-2xl">🕊️</span><p class="leading-7 text-pink-50/95">When I look at you, my heart finds a unique peace, and whenever we can't talk or I miss seeing you, my heart grows restless.</p></div></article>
+        </div>
+        <button data-next="shayariSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-300 to-rose-300 px-7 py-3.5 font-bold text-rose-950 transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200/40">Next: Romantic Lines 🌹</button>
+      </section>
+
+      <section id="shayariSection" class="hidden text-center">
+        <p class="mb-3 text-5xl">🌹</p>
+        <h2 class="text-3xl font-extrabold sm:text-4xl">A few words for you</h2>
+        <div class="mt-8 rounded-3xl bg-gradient-to-br from-fuchsia-400/30 via-rose-400/30 to-orange-300/25 p-7 text-xl font-semibold leading-9 shadow-inner ring-1 ring-white/20 sm:p-10 sm:text-2xl">
+          <p>“In a world full of ordinary moments,<br />you are my favorite kind of magic.”</p>
+          <div class="mx-auto my-5 h-px w-20 bg-white/40"></div>
+          <p>“If my heart had a favorite place,<br />it would always be wherever you are.”</p>
+        </div>
+        <button data-next="proposalSection" class="btn-glow mt-8 rounded-full bg-white px-7 py-3.5 font-bold text-rose-700 transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/40">Final Question 💍</button>
+      </section>
+
+      <section id="proposalSection" class="hidden text-center">
+        <div class="mb-5 text-6xl heartbeat">💘</div>
+        <p class="mb-3 text-sm font-semibold tracking-[.2em] text-pink-100 uppercase">My final question</p>
+        <h2 class="text-5xl font-black tracking-tight sm:text-7xl">I Love You<span class="text-pink-200">!</span></h2>
+        <p class="mx-auto mt-6 max-w-lg text-xl leading-8 text-pink-50/95">Will you be the most beautiful part of my life?</p>
+        <div id="buttonZone" class="relative mx-auto mt-9 flex min-h-32 flex-wrap items-center justify-center gap-4 overflow-hidden rounded-3xl border border-white/10 bg-black/10 p-4">
+          <button id="loveButton" class="btn-glow rounded-full bg-gradient-to-r from-pink-200 to-rose-300 px-6 py-3.5 font-extrabold text-rose-950 transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200/50">I Love You Too ❤️</button>
+          <button id="thinkButton" class="rounded-full border border-white/30 bg-white/10 px-6 py-3.5 font-bold text-white hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-white/30">Let me think 😅</button>
+        </div>
+        <p class="mt-4 text-sm text-pink-100/60">There is only one answer my heart is hoping for...</p>
+      </section>
+
+      <section id="celebrationSection" class="hidden text-center">
+        <div class="heartbeat mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-white/15 text-6xl ring-1 ring-white/25">🥰</div>
+        <p class="mb-3 text-sm font-semibold tracking-[.2em] text-pink-100 uppercase">You made my heart fly</p>
+        <h2 class="text-4xl font-black sm:text-6xl">Yayyy! Best Moment Ever! 🥰</h2>
+        <p class="mx-auto mt-6 max-w-lg text-lg leading-8 text-pink-50/90">You just made this the sweetest moment of my life. Thank you for choosing us. 💞</p>
+        <div class="mt-8 text-5xl">💖 ✨ 💕 ✨ 💖</div>
+      </section>
+    </div>
+    <p class="mt-6 text-center text-sm text-pink-100/55">Made with a little courage and a lot of love.</p>
+  </main>
+
+  <script>
+    const sections = [...document.querySelectorAll('main section')];
+    const showSection = (id) => {
+      sections.forEach((section) => {
+        const active = section.id === id;
+        section.classList.toggle('hidden', !active);
+        if (active) {
+          section.classList.remove('section-enter');
+          requestAnimationFrame(() => section.classList.add('section-enter'));
+        }
+      });
+    };
+
+    document.querySelectorAll('[data-next]').forEach((button) => {
+      button.addEventListener('click', () => showSection(button.dataset.next));
+    });
+
+    const zone = document.getElementById('buttonZone');
+    const thinkButton = document.getElementById('thinkButton');
+    const moveThinkButton = () => {
+      const maxX = Math.max(0, zone.clientWidth - thinkButton.offsetWidth - 20);
+      const maxY = Math.max(0, zone.clientHeight - thinkButton.offsetHeight - 20);
+      thinkButton.style.position = 'absolute';
+      thinkButton.style.left = `${Math.floor(Math.random() * (maxX + 1)) + 10}px`;
+      thinkButton.style.top = `${Math.floor(Math.random() * (maxY + 1)) + 10}px`;
+      thinkButton.style.transform = `rotate(${Math.floor(Math.random() * 12) - 6}deg)`;
+    };
+    ['mouseenter', 'pointerdown', 'touchstart', 'focus'].forEach((eventName) => {
+      thinkButton.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        moveThinkButton();
+      }, { passive: false });
+    });
+
+    document.getElementById('loveButton').addEventListener('click', () => {
+      showSection('celebrationSection');
+      const duration = 3500;
+      const end = Date.now() + duration;
+      const colors = ['#ff477e', '#ff8fab', '#ffd166', '#ffffff', '#c77dff', '#80ed99'];
+      const frame = () => {
+        confetti({ particleCount: 7, angle: 60, spread: 70, origin: { x: 0, y: 0.68 }, colors });
+        confetti({ particleCount: 7, angle: 120, spread: 70, origin: { x: 1, y: 0.68 }, colors });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      };
+      frame();
+      setTimeout(() => confetti({ particleCount: 120, spread: 110, startVelocity: 35, origin: { x: .5, y: .55 }, colors }), 250);
+    });
+  </script>
+</body>
+</html>
