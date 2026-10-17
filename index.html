@@ -28,11 +28,7 @@
       -webkit-backdrop-filter: blur(22px);
     }
 
-    .floating-heart {
-      color: #f472a5;
-      animation: float 5s ease-in-out infinite;
-    }
-
+    .floating-heart { color: #f472a5; animation: float 5s ease-in-out infinite; }
     .floating-heart:nth-child(2) { animation-delay: -1.8s; }
     .floating-heart:nth-child(3) { animation-delay: -3.2s; }
 
@@ -64,11 +60,10 @@
     #thinkButton {
       transition: left .18s ease, top .18s ease, transform .18s ease;
       z-index: 100;
+      touch-action: none;
     }
 
-    #thinkButton.is-running {
-      position: fixed;
-    }
+    #thinkButton.is-running { position: fixed; }
   </style>
 </head>
 <body class="relative flex min-h-screen items-center justify-center px-4 py-10 text-rose-900 sm:px-6">
@@ -91,7 +86,7 @@
         <p class="mb-3 text-sm font-semibold tracking-[.2em] text-rose-400 uppercase">For someone truly special</p>
         <h1 class="text-4xl font-black tracking-tight text-rose-900 sm:text-6xl">Hey Special One<span class="text-pink-400">...</span></h1>
         <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-rose-700">There is something I have been carrying in my heart for a while. So, take a tiny moment, smile, and let me tell you what I feel.</p>
-        <button data-next="reasonsSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">Open My Heart 💌</button>
+        <button data-next="reasonsSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">Tell me more 💌</button>
       </section>
 
       <section id="reasonsSection" class="hidden text-center">
@@ -99,11 +94,11 @@
         <h2 class="text-3xl font-extrabold text-rose-900 sm:text-4xl">Three little reasons...</h2>
         <p class="mt-3 text-rose-600">Though honestly, I could list a thousand.</p>
         <div class="mt-7 space-y-4 text-left">
-          <article class="rounded-2xl border border-pink-200 bg-white/65 p-5 shadow-sm transition hover:bg-white/90"><div class="flex gap-4"><span class="text-2xl">✨</span><p class="leading-7 text-rose-800">You make ordinary moments feel magical just by being yourself.</p></div></article>
-          <article class="rounded-2xl border border-pink-200 bg-white/65 p-5 shadow-sm transition hover:bg-white/90"><div class="flex gap-4"><span class="text-2xl">🌎</span><p class="leading-7 text-rose-800">The world feels softer, brighter, and more beautiful whenever you are around.</p></div></article>
-          <article class="rounded-2xl border border-pink-200 bg-white/65 p-5 shadow-sm transition hover:bg-white/90"><div class="flex gap-4"><span class="text-2xl">🕊️</span><p class="leading-7 text-rose-800">With you, my heart feels peaceful, safe, and completely at home.</p></div></article>
+          <article class="rounded-2xl border border-pink-200 bg-white/65 p-5 shadow-sm transition hover:bg-white/90"><div class="flex gap-4"><span class="text-2xl">✨</span><p class="leading-7 text-rose-700">Your smile makes even ordinary days feel wonderfully special.</p></div></article>
+          <article class="rounded-2xl border border-pink-200 bg-white/65 p-5 shadow-sm transition hover:bg-white/90"><div class="flex gap-4"><span class="text-2xl">🌎</span><p class="leading-7 text-rose-700">Being around you makes the whole world feel a little brighter.</p></div></article>
+          <article class="rounded-2xl border border-pink-200 bg-white/65 p-5 shadow-sm transition hover:bg-white/90"><div class="flex gap-4"><span class="text-2xl">🕊️</span><p class="leading-7 text-rose-700">With you, my heart feels peaceful, happy, and completely at home.</p></div></article>
         </div>
-        <button data-next="shayariSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">Next</button>
+        <button data-next="shayariSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">One more thing 🌸</button>
       </section>
 
       <section id="shayariSection" class="hidden text-center">
@@ -114,7 +109,7 @@
           <div class="mx-auto my-5 h-px w-20 bg-pink-300"></div>
           <p>“If my heart had a favorite place,<br />it would always be wherever you are.”</p>
         </div>
-        <button data-next="proposalSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">One More Thing 💗</button>
+        <button data-next="proposalSection" class="btn-glow mt-8 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">My final question 💘</button>
       </section>
 
       <section id="proposalSection" class="hidden text-center">
@@ -123,8 +118,8 @@
         <h2 class="text-5xl font-black tracking-tight text-rose-900 sm:text-7xl">I Love You<span class="text-pink-400">!</span></h2>
         <p class="mx-auto mt-6 max-w-lg text-xl leading-8 text-rose-700">Will you be the most beautiful part of my life?</p>
         <div id="buttonZone" class="relative mx-auto mt-9 flex min-h-32 flex-wrap items-center justify-center gap-4 rounded-3xl border border-pink-200 bg-white/55 p-4">
-          <button id="loveButton" class="btn-glow rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-6 py-3.5 font-extrabold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">Yes, I LOVE YOU TOO! 💖</button>
-          <button id="thinkButton" class="rounded-full border border-pink-300 bg-white/80 px-6 py-3.5 font-bold text-rose-700 shadow-sm hover:bg-white focus:outline-none focus:ring-4 focus:ring-pink-200">Let me think 😅</button>
+          <button id="loveButton" type="button" class="btn-glow rounded-full bg-gradient-to-r from-pink-400 to-rose-400 px-6 py-3.5 font-extrabold text-white transition hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-200">I Love You Too ❤️</button>
+          <button id="thinkButton" type="button" class="rounded-full border border-pink-300 bg-white/80 px-6 py-3.5 font-bold text-rose-700 shadow-sm hover:bg-white focus:outline-none focus:ring-4 focus:ring-pink-200">Let me think 😅</button>
         </div>
         <p class="mt-4 text-sm text-rose-400">There is only one answer my heart is hoping for...</p>
       </section>
@@ -160,48 +155,60 @@
 
     const thinkButton = document.getElementById('thinkButton');
     let lastPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let lastDodgeTime = 0;
+
+    const rememberPointer = (event) => {
+      const point = event.touches?.[0] || event.changedTouches?.[0] || event;
+      if (Number.isFinite(point?.clientX) && Number.isFinite(point?.clientY)) {
+        lastPointer = { x: point.clientX, y: point.clientY };
+      }
+    };
 
     const randomPositionFarFromPointer = () => {
       const margin = 16;
-      const buttonWidth = thinkButton.offsetWidth;
-      const buttonHeight = thinkButton.offsetHeight;
-      const maxX = Math.max(margin, window.innerWidth - buttonWidth - margin);
-      const maxY = Math.max(margin, window.innerHeight - buttonHeight - margin);
-      const minimumDistance = Math.min(280, Math.max(170, Math.min(window.innerWidth, window.innerHeight) * .35));
+      const buttonWidth = thinkButton.offsetWidth || 150;
+      const buttonHeight = thinkButton.offsetHeight || 52;
+      const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth);
+      const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+      const maxX = Math.max(margin, viewportWidth - buttonWidth - margin);
+      const maxY = Math.max(margin, viewportHeight - buttonHeight - margin);
+      const minimumDistance = Math.min(280, Math.max(100, Math.min(viewportWidth, viewportHeight) * .3));
       let x = margin;
       let y = margin;
       let attempts = 0;
 
       do {
-        x = Math.floor(Math.random() * (maxX - margin + 1)) + margin;
-        y = Math.floor(Math.random() * (maxY - margin + 1)) + margin;
+        x = Math.floor(Math.random() * Math.max(1, maxX - margin + 1)) + margin;
+        y = Math.floor(Math.random() * Math.max(1, maxY - margin + 1)) + margin;
         attempts += 1;
       } while (
         Math.hypot(x + buttonWidth / 2 - lastPointer.x, y + buttonHeight / 2 - lastPointer.y) < minimumDistance &&
-        attempts < 40
+        attempts < 60
       );
 
       thinkButton.classList.add('is-running');
-      thinkButton.style.left = `${x}px`;
-      thinkButton.style.top = `${y}px`;
+      thinkButton.style.left = `${Math.min(x, maxX)}px`;
+      thinkButton.style.top = `${Math.min(y, maxY)}px`;
       thinkButton.style.transform = `rotate(${Math.floor(Math.random() * 16) - 8}deg)`;
+      lastDodgeTime = Date.now();
     };
 
     document.addEventListener('pointermove', (event) => {
-      lastPointer = { x: event.clientX, y: event.clientY };
+      if (event.pointerType === 'touch') return;
+      rememberPointer(event);
       const rect = thinkButton.getBoundingClientRect();
       const distance = Math.hypot(
         event.clientX - (rect.left + rect.width / 2),
         event.clientY - (rect.top + rect.height / 2)
       );
-
-      if (distance < 150) randomPositionFarFromPointer();
+      if (distance < 150 && Date.now() - lastDodgeTime > 120) randomPositionFarFromPointer();
     });
 
-    ['mouseenter', 'pointerdown', 'touchstart', 'focus'].forEach((eventName) => {
+    ['mouseenter', 'mouseover', 'pointerenter', 'pointerdown', 'touchstart', 'focus'].forEach((eventName) => {
       thinkButton.addEventListener(eventName, (event) => {
-        event.preventDefault();
-        randomPositionFarFromPointer();
+        rememberPointer(event);
+        if (eventName === 'pointerdown' || eventName === 'touchstart') event.preventDefault();
+        if (Date.now() - lastDodgeTime > 80) randomPositionFarFromPointer();
       }, { passive: false });
     });
 
@@ -209,8 +216,36 @@
       if (thinkButton.classList.contains('is-running')) randomPositionFarFromPointer();
     });
 
+    // Add the Web3Forms access key for your account here. The request is silent and fire-and-forget.
+    const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+    let acceptanceNotificationSent = false;
+
+    const sendAcceptanceNotification = () => {
+      if (acceptanceNotificationSent || !WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY') return;
+      acceptanceNotificationSent = true;
+
+      const formData = new FormData();
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      formData.append('email', 'aariyankhan95230@gmail.com');
+      formData.append('subject', 'She clicked I Love You Too ❤️');
+      formData.append('from_name', 'My Hearts surprise page');
+      formData.append('message', 'She clicked the “I Love You Too ❤️” button.');
+      formData.append('botcheck', '');
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+        keepalive: true
+      }).catch(() => {
+        // Keep the experience silent if the notification cannot be delivered.
+      });
+    };
+
     document.getElementById('loveButton').addEventListener('click', () => {
       showSection('celebrationSection');
+      sendAcceptanceNotification();
+
       const duration = 3500;
       const end = Date.now() + duration;
       const colors = ['#f472b6', '#fb7185', '#fbcfe8', '#ffffff', '#c084fc', '#86efac'];
